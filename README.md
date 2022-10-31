@@ -6,7 +6,7 @@ This is a final homework of a [column class]([分布式协议与算法实战_分
 
 ## Building
 
-This repository uses [hashicorp/raft]([GitHub - hashicorp/raft: Golang implementation of the Raft consensus protocol](https://github.com/hashicorp/raft)), so you'll need Go version 16+ installed.
+This repository uses [hashicorp-raft]([GitHub - hashicorp/raft: Golang implementation of the Raft consensus protocol](https://github.com/hashicorp/raft)), so you'll need Go version 16+ installed.
 
 There are two port needed in a single node (such as: 8080, 8079, one for HTTP service, the other for raft RPC). they can be set by `-haddr` and `-raddr`.
 
@@ -19,7 +19,6 @@ For the first node to be initiated, you should use `-bootstrap` param. So that t
 ```shell
 raft-kv-demo -id node1 -raddr cluster-host1:8080 -haddr cluster-host1:8079 -bootstrap
 ```
-
 
 For other nodes, we can use `-join`, sending join http request to leader, to make the node join in the cluster. 
 
